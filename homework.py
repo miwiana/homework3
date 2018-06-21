@@ -89,7 +89,7 @@ class PeopleClient:
            raise PeopleClientError("Użytkownik o podanym ID nie istnieje")
         elif not response.ok:
             raise PeopleClientError(response.json()["Error"])
-        return "Użytkownik o podanym id: " + str(person_id) + " został usunięty poprawnie."
+        return response.json()
 
 
     def delete_by_name(self, first_name):
